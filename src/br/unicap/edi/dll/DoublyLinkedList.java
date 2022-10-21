@@ -51,4 +51,17 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             this.quantity++;
         }
     }
+
+    public void showAll() {
+        DoublyLinkedNode<T> current;
+        if (this.isEmpty()) {
+            System.out.println("Empty List");
+        } else {
+            current = this.first;
+            while (current != null) {
+                System.out.println(current.getContent());
+                current = current.getNext();
+            }
+        }
+    }
 }
