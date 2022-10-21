@@ -36,7 +36,19 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             this.first = node;
             this.quantity++;
         }
-
     }
 
+    public void insertLast(T content) {
+        DoublyLinkedNode<T> node = new DoublyLinkedNode(content);
+        if (this.isEmpty()) {
+            this.first = node;
+            this.last = node;
+            this.quantity++;
+        } else {
+            this.last.setNext(node);
+            node.setPrevious(this.last);
+            this.last = node;
+            this.quantity++;
+        }
+    }
 }
