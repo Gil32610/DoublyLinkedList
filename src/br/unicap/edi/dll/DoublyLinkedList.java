@@ -64,4 +64,17 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             }
         }
     }
+
+    public void reverseShowAll() {
+        DoublyLinkedNode<T> current;
+        if (this.isEmpty()) {
+            System.out.println("Empty List");
+        } else {
+            current = this.last;
+            while (current != null) {
+                System.out.println(current.getContent());
+                current = current.getPrevious();
+            }
+        }
+    }
 }
