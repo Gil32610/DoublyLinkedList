@@ -59,7 +59,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         } else {
             current = this.first;
             while (current != null) {
-                System.out.println(current.getContent());
+                System.out.println(current.getContent() + " ");
                 current = current.getNext();
             }
         }
@@ -72,7 +72,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         } else {
             current = this.last;
             while (current != null) {
-                System.out.println(current.getContent());
+                System.out.println(current.getContent()+  " ");
                 current = current.getPrevious();
             }
         }
