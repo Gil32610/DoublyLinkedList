@@ -72,9 +72,23 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         } else {
             current = this.last;
             while (current != null) {
-                System.out.println(current.getContent()+  " ");
+                System.out.println(current.getContent() + " ");
                 current = current.getPrevious();
             }
+        }
+    }
+
+    public void removeFirst() {
+        if (this.isEmpty()) {
+            System.out.println("Empty list");
+        } else if (this.quantity == 1) {
+            this.first = null;
+            this.last = null;
+            this.quantity = 0;
+        } else {
+            this.first = this.first.getNext();
+            this.first.setPrevious(null);
+            this.quantity--;
         }
     }
 }
