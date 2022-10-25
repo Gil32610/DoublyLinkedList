@@ -136,6 +136,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             while (current != null) {
                 if (content.compareTo(current.getContent()) < 0) {
                     node.setNext(current);
+                    node.setPrevious(current.getPrevious());
                     current.getPrevious().setNext(node);
                     current.setPrevious(node);
                     this.quantity++;
