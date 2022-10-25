@@ -107,7 +107,28 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     }
 
     public void removeNode(T content) {
+        if(this.isEmpty()){
+            System.out.println("Was not added to the list.");
+        }
+        else if(this.first.getNext() == null){
+            if(content.compareTo(this.first.getContent())==0){
+                this.first = null;
+                this.last = null;
+                this.quantity = 0;
+            }
+            else{
+                System.out.println("Was not added to the list");
+            }
 
+        }
+        else{
+            DoublyLinkedNode<T> current = this.first;
+            if(content.compareTo(current.getContent()) == 0){
+                this.first = current.getNext();
+                this.first.setPrevious(null);
+                this.quantity--;
+            }
+        }
     }
 
     public void insertionSort(T content) {
@@ -170,4 +191,6 @@ public class DoublyLinkedList<T extends Comparable<T>> {
         }
 
     }
+
+
 }
