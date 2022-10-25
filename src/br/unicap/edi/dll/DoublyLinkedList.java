@@ -127,9 +127,12 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             node.setPrevious(this.last);
             this.last = node;
             this.quantity++;
+        } else if (content.compareTo(this.first.getContent()) == 0) {
+            System.out.println("Already exists");
+        } else if (content.compareTo(this.last.getContent()) == 0) {
+            System.out.println("Already exists");
         } else {
             current = this.first.getNext();
-
             while (current != null) {
                 if (content.compareTo(current.getContent()) < 0) {
                     node.setNext(current);
@@ -137,7 +140,10 @@ public class DoublyLinkedList<T extends Comparable<T>> {
                     current.setPrevious(node);
                     this.quantity++;
                 }
-                else{
+                if (content.compareTo(current.getContent()) == 0) {
+                    System.out.println("Already exists");
+                    break;
+                } else {
                     current = current.getNext();
                 }
             }
