@@ -139,6 +139,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
                     current.getPrevious().setNext(node);
                     current.setPrevious(node);
                     this.quantity++;
+                    break;
                 }
                 if (content.compareTo(current.getContent()) == 0) {
                     System.out.println("Already exists");
