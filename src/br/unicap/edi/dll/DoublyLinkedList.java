@@ -111,7 +111,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     }
 
     public void insertionSort(T content) {
-        DoublyLinkedNode current;
+        DoublyLinkedNode<T> current;
         DoublyLinkedNode<T> node = new DoublyLinkedNode<>(content);
         if (this.isEmpty()) {
             this.first = node;
