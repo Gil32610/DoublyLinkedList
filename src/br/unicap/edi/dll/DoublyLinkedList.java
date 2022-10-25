@@ -151,4 +151,23 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             }
         }
     }
+
+    public DoublyLinkedNode<T> search(T content) {
+        if (this.isEmpty()) {
+            return null;
+        } else {
+            DoublyLinkedNode<T> current = this.first;
+            for (int i = 0; i < this.capacity; i++) {
+                if (content.compareTo(current.getContent()) == 0) {
+                    return current;
+                }
+                if (content.compareTo(current.getContent()) > 0) {
+                    return null;
+                }
+                current = current.getNext();
+            }
+            return null;
+        }
+
+    }
 }
