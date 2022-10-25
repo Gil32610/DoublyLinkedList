@@ -91,4 +91,18 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             this.quantity--;
         }
     }
+
+    public void removeLast(){
+        if (this.isEmpty()) {
+            System.out.println("Empty list");
+        } else if (this.quantity == 1) {
+            this.first = null;
+            this.last = null;
+            this.quantity = 0;
+        }else{
+            this.last = this.last.getPrevious();
+            this.last.setNext(null);
+            this.quantity--;
+        }
+    }
 }
