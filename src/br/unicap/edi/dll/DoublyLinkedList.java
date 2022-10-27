@@ -157,16 +157,19 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             this.first = node;
             this.last = node;
             this.quantity++;
+            System.out.println("Content added!");
         } else if (content.compareTo(this.first.getContent()) < 0) {
             this.first.setPrevious(node);
             node.setNext(this.first);
             this.first = node;
             this.quantity++;
+            System.out.println("Content added!");
         } else if (content.compareTo(this.last.getContent()) > 0) {
             this.last.setNext(node);
             node.setPrevious(this.last);
             this.last = node;
             this.quantity++;
+            System.out.println("Content added!");
         } else if (content.compareTo(this.first.getContent()) == 0) {
             System.out.println("Already exists");
         } else if (content.compareTo(this.last.getContent()) == 0) {
@@ -180,6 +183,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
                     current.getPrevious().setNext(node);
                     current.setPrevious(node);
                     this.quantity++;
+                    System.out.println("Content added!");
                     break;
                 }
                 if (content.compareTo(current.getContent()) == 0) {
