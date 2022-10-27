@@ -205,7 +205,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
                 if (content.compareTo(current.getContent()) == 0) {
                     return current;
                 }
-                if (content.compareTo(current.getContent()) > 0) {
+                if (content.compareTo(current.getContent()) < 0) {
                     return null;
                 }
                 current = current.getNext();
