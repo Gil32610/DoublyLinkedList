@@ -6,7 +6,10 @@ import java.util.Scanner;
 public class IntegerList {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        DoublyLinkedList<Integer> list = new DoublyLinkedList<>(10);
+        int capacity;
+        System.out.println("Insert the list capacity:");
+        capacity = Integer.parseInt(s.nextLine());
+        DoublyLinkedList<Integer> list = new DoublyLinkedList<>(capacity);
         int op;
         Integer number;
 
