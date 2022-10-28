@@ -37,7 +37,7 @@ public class IntegerList {
                     number = Integer.parseInt(s.nextLine());
                     DoublyLinkedNode<Integer> search = list.search(number);
                     if (search == null) {
-                        System.out.println("Number not found");
+                        System.out.println("Number not found!");
                     } else {
                         System.out.println("Number is on the list. Result: " + search.getContent());
                     }
