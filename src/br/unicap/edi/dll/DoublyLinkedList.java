@@ -200,7 +200,7 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             return this.last;
         } else {
             DoublyLinkedNode<T> current = this.first;
-            for (int i = 0; i < this.capacity; i++) {
+            while (current.getNext()!= null) {
                 if (content.compareTo(current.getContent()) == 0) {
                     return current;
                 }
