@@ -132,20 +132,16 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             } else if (content.compareTo(this.last.getContent()) > 0) {
                 System.out.println("Was not added to the list");
             } else {
-                DoublyLinkedNode<T> current = this.first.getNext();
-                while (current != null) {
-                    if (content.compareTo(current.getContent()) == 0) {
-                        current.getPrevious().setNext(current.getNext());
-                        current.getNext().setPrevious(current.getPrevious());
+                DoublyLinkedNode<T> search = search(content);
+
+                if(search!= null){
+                    search.getPrevious().setNext(search.getNext());
+                        search.getNext().setPrevious(search.getPrevious());
                         this.quantity--;
-                        break;
-                    }
-                    if (content.compareTo(current.getContent()) > 0) {
-                        System.out.println("Was not added to the list");
-                        break;
-                    }
-                    current = current.getNext();
                 }
+               else{
+                System.out.println("Was not added to the list!");
+               }
             }
         }
     }
