@@ -134,14 +134,13 @@ public class DoublyLinkedList<T extends Comparable<T>> {
             } else {
                 DoublyLinkedNode<T> search = search(content);
 
-                if(search!= null){
+                if (search != null) {
                     search.getPrevious().setNext(search.getNext());
-                        search.getNext().setPrevious(search.getPrevious());
-                        this.quantity--;
+                    search.getNext().setPrevious(search.getPrevious());
+                    this.quantity--;
+                } else {
+                    System.out.println("Was not added to the list!");
                 }
-               else{
-                System.out.println("Was not added to the list!");
-               }
             }
         }
     }
@@ -195,6 +194,10 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     public DoublyLinkedNode<T> search(T content) {
         if (this.isEmpty()) {
             return null;
+        } else if (content.compareTo(this.last.getContent()) > 0) {
+            return null;
+        } else if (content.compareTo(this.last.getContent()) == 0) {
+            return this.last;
         } else {
             DoublyLinkedNode<T> current = this.first;
             for (int i = 0; i < this.capacity; i++) {
