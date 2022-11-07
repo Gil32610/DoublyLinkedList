@@ -6,6 +6,10 @@ public class DoublyLinkedList<T extends Comparable<T>> {
     private int quantity;
     private int capacity;
 
+    public int getQuantity() {
+        return this.quantity;
+    }
+
     public boolean isEmpty() {
         if (this.quantity == 0 || this.first == null || this.last == null) {
             return true;
